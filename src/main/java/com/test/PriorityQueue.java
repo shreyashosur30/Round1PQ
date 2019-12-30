@@ -69,7 +69,6 @@ public class PriorityQueue {
     public static void main(String[] args) {
         PriorityQueue priorityQueue = new PriorityQueue();
         boolean whileloop = true;
-
         Scanner scanner = new Scanner(System.in);
         while (whileloop){
             System.out.println("Please Enter the Option");
@@ -92,7 +91,7 @@ public class PriorityQueue {
                         System.out.println("Number and Priority");
                         int number = Integer.parseInt(scanner.nextLine());
                         int priority = Integer.parseInt(scanner.nextLine());
-                        priorityQueue.insertwithPriority(4,5);
+                        priorityQueue.insertwithPriority(number,priority);
                     }
                     catch (NumberFormatException e){
                         System.out.println("Please give appropriate Number");
