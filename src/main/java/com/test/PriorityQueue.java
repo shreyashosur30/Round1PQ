@@ -68,11 +68,61 @@ public class PriorityQueue {
 
     public static void main(String[] args) {
         PriorityQueue priorityQueue = new PriorityQueue();
-        priorityQueue.insert(1);
-        priorityQueue.insert(2);
-        priorityQueue.insert(3);
-        priorityQueue.insertwithPriority(4,5);
-        priorityQueue.insertwithPriority(5,6);
-        System.out.println(priorityQueue.deleteElementwithPriority(5));
+        boolean whileloop = true;
+
+        Scanner scanner = new Scanner(System.in);
+        while (whileloop){
+            System.out.println("Please Enter the Option");
+            System.out.println("Option 1 : Insert element with Priority");
+            System.out.println("Option 2 : Insert element without Priority");
+            System.out.println("Option 3 : Remove element  Highest Priority");
+            System.out.println("Option 4 : Remove element  Given Priority");
+            System.out.println("Option 5 : Break the Loop");
+            int option;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            }
+            catch (NumberFormatException e){
+                System.out.println("Please give appropriate Number");
+                continue;
+            }
+            switch (option){
+                case 1 :
+                    try {
+                        System.out.println("Number and Priority");
+                        int number = Integer.parseInt(scanner.nextLine());
+                        int priority = Integer.parseInt(scanner.nextLine());
+                        priorityQueue.insertwithPriority(4,5);
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println("Please give appropriate Number");
+                    }
+                    break;
+                case 2 :
+                    try {
+                        int number = Integer.parseInt(scanner.nextLine());
+                        priorityQueue.insert(number);
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println("Please give appropriate Number");
+                    }
+                    break;
+                case 3 :
+                    priorityQueue.deleteElementwithHighestPriority();
+                    break;
+                case 4 :
+                    try {
+                        int priority = Integer.parseInt(scanner.nextLine());
+                        priorityQueue.deleteElementwithPriority(priority);
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println("Please give appropriate Number");
+                    }
+                    break;
+                default:
+                    whileloop = false;
+
+            }
+        }
     }
 }
